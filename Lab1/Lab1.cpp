@@ -55,7 +55,14 @@ int main()
 			DrawVerticalLine(_height, _ch);
 			break;
 		case 3:
-
+			do
+			{
+				cout << "\nEnter a size for the square: ";
+				cin >> _size;
+			} while (_size < 1);
+			cout << "\nEnter a character of the square: ";
+			cin >> _ch;
+			DrawSquare(_size, _ch);
 			break;
 		case 4:
 
@@ -93,7 +100,6 @@ void DrawHorizontalLine(int length, char ch)
 	}
 	cout << endl;
 }
-
 void DrawVerticalLine(int height, char ch)
 {
 	for (int i = 0; i < height; ++i)
@@ -119,5 +125,16 @@ void DrawRectangle(int length, int height, char ch)
 		cout << ch << endl;
 	}
 	DrawHorizontalLine(length, ch);
+}
+void DrawSquare(int size, char ch)
+{
+	for (int i = 0; i < size; ++i)
+	{
+		for (int j = 0; j < size; ++j)
+		{
+			cout << ch << ' ';
+		}
+		cout << endl;
+	}
 }
 
