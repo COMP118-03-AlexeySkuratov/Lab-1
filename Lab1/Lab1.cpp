@@ -1,16 +1,25 @@
-/*
-* 
-
+/** \file Lab1.cpp
+* \brief This file contains a small drawing program that is giving a choice of five and then executes a sub-program with number corresponding to the user's choice
+* \author Alex
+* \date 08/03/2024
+* \copyright UNic
 */
 #include <iostream>
 
 using  namespace std;
 
+// Prototypes
 void DrawHorizontalLine(int, char);
 void DrawVerticalLine(int, char);
 void DrawSquare(int, char);
 void DrawRectangle(int, int, char);
 
+
+/**
+* Shows the menu and does the selection
+* <BR>
+* @return Returns 0
+*/
 int main()
 {
 	int choice;
@@ -91,7 +100,12 @@ int main()
 	
 }
 
-//Draws a horizontal line
+/**
+* Draws a horizontal line with a certain length and character
+* <BR>
+* @param length The length of the line to be drawn
+* @param ch The symbol to be used to draw the line
+*/
 void DrawHorizontalLine(int length, char ch)
 {
 	for (int i = 0; i < length; ++i)
@@ -100,6 +114,13 @@ void DrawHorizontalLine(int length, char ch)
 	}
 	cout << endl;
 }
+
+/**
+* Draws a vertical line with a certain height and character
+* <BR>
+* @param height The height of the line to be drawn
+* @param ch The symbol to be used to draw the line
+*/
 void DrawVerticalLine(int height, char ch)
 {
 	for (int i = 0; i < height; ++i)
@@ -108,6 +129,14 @@ void DrawVerticalLine(int height, char ch)
 	}
 	cout << endl << endl;
 }
+
+/**
+* Draws a rectangle with a certain length, height and character
+* <BR>
+* @param length The length of the rectangle to be drawn
+* @param height The height of the rectangle to be drawn
+* @param ch The symbol to be used to draw the rectangle
+*/
 void DrawRectangle(int length, int height, char ch)
 {
 	//Top Line
@@ -126,6 +155,13 @@ void DrawRectangle(int length, int height, char ch)
 	}
 	DrawHorizontalLine(length, ch);
 }
+
+/**
+* Draws a square with a certain size and character
+* <BR>
+* @param size The size of the square to be drawn
+* @param ch The symbol to be used to draw the square
+*/
 void DrawSquare(int size, char ch)
 {
 	for (int i = 0; i < size; ++i)
