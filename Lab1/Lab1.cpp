@@ -5,6 +5,7 @@
 * \copyright UNic
 */
 #include <iostream>
+#include <cassert>
 
 using  namespace std;
 
@@ -106,12 +107,18 @@ int main()
 * @param length The length of the line to be drawn
 * @param ch The symbol to be used to draw the line
 */
-void DrawHorizontalLine(int length, char ch)
+void DrawHorizontalLine(const int length, const char ch)
 {
-	for (int i = 0; i < length; ++i)
+	assert(length > 0);
+	assert(ch >= '!' && ch <= '~');
+
+	int i;
+	for (i = 0; i < length; ++i)
 	{
 		cout << ch;
 	}
+
+	assert(i == length);
 	cout << endl;
 }
 
