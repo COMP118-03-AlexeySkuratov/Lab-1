@@ -36,7 +36,7 @@ int main()
 		cout << "\n5) Quit";
 		cout << "\nEnter choice: ";
 		cin >> choice;
-
+		assert(choice >= 1 && choice <= 5);
 
 		switch (choice)
 		{
@@ -59,7 +59,8 @@ int main()
 				cout << "\n\nEnter height of the vertical line: ";
 				cin >> _height;
 			} while (_height < 1);
-
+			
+			assert(_height > 1);
 			cout << "\nEnter a character of the vertical line: ";
 			cin >> _ch;
 			DrawVerticalLine(_height, _ch);
@@ -81,12 +82,15 @@ int main()
 				cout << "\n\nEnter length of the rectangle: ";
 				cin >> _length;
 			} while (_length < 1);
-
+			
+			assert(_length > 1);
 			do
 			{
 				cout << "\n\nEnter height of the rectangle: ";
 				cin >> _height;
 			} while (_height < 2);
+			assert(_height > 2);
+
 
 			cout << "\nEnter a character of the Rectangle: ";
 			cin >> _ch;
@@ -130,10 +134,15 @@ void DrawHorizontalLine(const int length, const char ch)
 */
 void DrawVerticalLine(int height, char ch)
 {
-	for (int i = 0; i < height; ++i)
+
+	assert(ch >= '!' && ch <= '~');
+	int i;
+	for (i = 0; i < height; ++i)
 	{
 		cout << ch << endl;
 	}
+
+	assert(i == height);
 	cout << endl << endl;
 }
 
@@ -149,17 +158,23 @@ void DrawRectangle(int length, int height, char ch)
 	//Top Line
 	DrawHorizontalLine(length, ch);
 
-	for (int i = 0; i < height - 2; ++i)
+
+	int i;
+	for (i = 0; i < height - 2; ++i)
 	{
 		cout << ch;
 		
-		for (int j = 0; j < length - 2; ++j)
+		int j;
+		for (j = 0; j < length - 2; ++j)
 		{
 			cout << ' ';
 		}
+		assert(j == height);
 
 		cout << ch << endl;
 	}
+
+	assert(i == height);
 	DrawHorizontalLine(length, ch);
 }
 
@@ -171,13 +186,18 @@ void DrawRectangle(int length, int height, char ch)
 */
 void DrawSquare(int size, char ch)
 {
-	for (int i = 0; i < size; ++i)
+
+	int i;
+	for (i = 0; i < size; ++i)
 	{
-		for (int j = 0; j < size; ++j)
+		int j;
+		for (j = 0; j < size; ++j)
 		{
 			cout << ch << ' ';
 		}
+		assert(j == size);
 		cout << endl;
 	}
+	assert(i == size);
 }
 
